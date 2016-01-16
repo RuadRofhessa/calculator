@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1385316878 source:c:\users\jay\documents\github\calculator\main.cpp
+	<iostream>
+
+1452975989 source:c:\users\jay\documents\github\calculator\src\operand.cpp
+	"Operand.h"
+
+1452976149 c:\users\jay\documents\github\calculator\include\operand.h
+
