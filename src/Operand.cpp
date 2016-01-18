@@ -10,15 +10,19 @@ Operand::~Operand()
     //dtor
 }
 
-real_Number& real_Number::operator+(const real_Number &a)const{
+Operand& real_Number::evaluate(){
 
-    real_Number temp;
-    temp.real = this->real + a.real;
-    return temp;
+    return this;
+}
+/*
+double real_Number::operator+(const real_Number &a){
+
+    return this->real + a.real;
 }
 
 
 double add::calculate(){
 
-    return left->calculate()+right->calculate();
+    return *left + *right;
 }
+*/

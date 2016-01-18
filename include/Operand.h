@@ -6,7 +6,8 @@ class Operand
 {
     public:
         Operand();
-        double virtual calculate() = 0;
+        //double virtual calculate() = 0;
+        virtual Operand& evaluate() = 0;
         virtual ~Operand();
     protected:
     private:
@@ -15,8 +16,12 @@ class Operand
 class real_Number : Operand{
 
     public:
-        double calculate(){return real;}
-        real_Number& operator+(const real_Number &a)const;
+        real_Number(){real = 0;}
+        real_Number(double r){real = r;}
+        real_Number(real_Number &r){this->real = r.real;}
+        Operand& evaluate();// {return *this;}
+        double operator+(const real_Number &a);
+
     protected:
         double real;
 };
@@ -25,9 +30,9 @@ class add : Operand{
 
     public:
 
-    double calculate();
+    Operand& evaluate();
 
     private:
-    Operand *left, *right;
+    real_Number *left, *right;
 };
 #endif // OPERAND_H
